@@ -1,3 +1,23 @@
+/*
+    A simple Tic Tac Toe game written in Koka a function programing language with an effect system.
+    The game can be played in three modes:
+    1. Two player
+    2. One player
+    3. Zero player
+    Copyright (C) 2023, Alec Davis
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+*/
+
+
 import std/os/readline
 fun flatten(grid : list<list<char>>) : list<char> {
     match grid {
@@ -305,10 +325,15 @@ fun zero-player-game() {
 
 fun main () {
     println("Welcome to Tic Tac Toe!")
+    println("Copyright (C) 2023 Alec Davis\n" ++
+    "This program comes with ABSOLUTELY NO WARRANTY.\n" ++
+    "This is free software, and you are welcome to redistribute it\n" ++
+    "under certain conditions.\n")
     println("Please select a game mode:")
     println("1. Two player")
     println("2. One player")
     println("3. Zero player")
+    println("Enter the number of the game mode you want to play")
     match readline().list() {
         Cons('1', Nil) -> start-two-player-game()
         Cons('2', Nil) -> start-one-player-game()
